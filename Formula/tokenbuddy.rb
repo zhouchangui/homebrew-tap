@@ -1,12 +1,13 @@
 class Tokenbuddy < Formula
   desc "TokenBuddy buyer CLI and local proxy daemon"
   homepage "https://github.com/zhouchangui/TokenBuddy"
-  url "https://raw.githubusercontent.com/zhouchangui/homebrew-tap/main/dist/tokenbuddy-0.1.1-aarch64-apple-darwin.tar.gz"
-  sha256 "1f88a80b298ce29efcc2626b157065bd8782b82deeb54478f02007dfa602ad4f"
+  url "https://github.com/zhouchangui/TokenBuddy/releases/download/v0.1.1/tokenbuddy-0.1.1-aarch64-apple-darwin.tar.gz"
+  sha256 "09edddc51e6b77297fe5625d46cac27121a6996657d7bc05870da238b82069f1"
   version "0.1.1"
 
   def install
     pkg = Dir["#{buildpath}/tokenbuddy-0.1.1-*"].first
+    pkg = buildpath if pkg.nil?
     bin.install "#{pkg}/bin/tb"
     bin.install "#{pkg}/bin/tb-proxyd"
     prefix.install "#{pkg}/config"
