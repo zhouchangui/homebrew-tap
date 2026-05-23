@@ -2,7 +2,7 @@ class Tokenbuddy < Formula
   desc "TokenBuddy buyer CLI and local proxy daemon"
   homepage "https://github.com/zhouchangui/TokenBuddy"
   url "https://raw.githubusercontent.com/zhouchangui/homebrew-tap/main/dist/tokenbuddy-0.1.1-aarch64-apple-darwin.tar.gz"
-  sha256 "81e0702b1e78f1bb9f94cc0b192d6a4a7b2ee3aca2d719cc74d93a10685f183a"
+  sha256 "1f88a80b298ce29efcc2626b157065bd8782b82deeb54478f02007dfa602ad4f"
   version "0.1.1"
 
   def install
