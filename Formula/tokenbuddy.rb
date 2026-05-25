@@ -1,12 +1,12 @@
 class Tokenbuddy < Formula
   desc "TokenBuddy buyer CLI and local proxy daemon"
   homepage "https://github.com/zhouchangui/TokenBuddy"
-  url "https://raw.githubusercontent.com/zhouchangui/homebrew-tap/main/dist/tokenbuddy-0.1.1-aarch64-apple-darwin.tar.gz"
-  sha256 "09edddc51e6b77297fe5625d46cac27121a6996657d7bc05870da238b82069f1"
-  version "0.1.1"
+  url "https://github.com/zhouchangui/TokenBuddy/releases/download/v0.1.5/tokenbuddy-0.1.5-aarch64-apple-darwin.tar.gz"
+  sha256 "adb0afe16d5230b27845628334c720def31b8ff5957dcf9a54402d612d38b18a"
+  version "0.1.5"
 
   def install
-    pkg = Dir["#{buildpath}/tokenbuddy-0.1.1-*"].first
+    pkg = Dir["#{buildpath}/tokenbuddy-0.1.5-*"].first
     pkg = buildpath if pkg.nil?
     bin.install "#{pkg}/bin/tb"
     bin.install "#{pkg}/bin/tb-proxyd"
@@ -33,14 +33,7 @@ class Tokenbuddy < Formula
     <<~EOS
       The formula installs tb and tb-proxyd into Homebrew's bin directory.
       If tb is not on PATH, run:
-        eval "export HOMEBREW_PREFIX="/opt/homebrew";
-export HOMEBREW_CELLAR="/opt/homebrew/Cellar";
-export HOMEBREW_REPOSITORY="/opt/homebrew";
-fpath[1,0]="/opt/homebrew/share/zsh/site-functions";
-export FPATH;
-eval "$(/usr/bin/env PATH_HELPER_ROOT="/opt/homebrew" /usr/libexec/path_helper -s)"
-[ -z "${MANPATH-}" ] || export MANPATH=":${MANPATH#:}";
-export INFOPATH="/opt/homebrew/share/info:${INFOPATH:-}";"
+        eval "$(brew shellenv)"
 
       tb-proxyd is configured as a Homebrew service:
         brew services start #{name}
